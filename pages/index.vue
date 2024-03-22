@@ -8,7 +8,7 @@
         <div class="md-absolute-center flex flex-col items-center">
           <h1
             ref="heroText"
-            class="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-center font-brushking text-6xl leading-[8rem] tracking-widest text-transparent"
+            class="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-center font-brushking text-6xl italic leading-[8rem] tracking-widest text-transparent"
           >
             Super <br />
             Kung Vue
