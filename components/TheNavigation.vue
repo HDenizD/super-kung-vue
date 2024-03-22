@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto flex w-screen items-center justify-between">
+  <div class="mx-auto flex h-10 w-screen items-center justify-between">
     <Transition
       enter-active-class="animate__lightSpeedInLeft"
       leave-active-class="animate__lightSpeedOutLeft animate__faster"
