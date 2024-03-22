@@ -1,0 +1,19 @@
+.animated-text {
+  background-image: linear-gradient(
+    to left,
+    #41b983,
+    #354a5f,
+    #41b983,
+    #41b983
+  );
+  background-position: 100%;
+  background-size: 300%;
+
+  animation: animatedText 5s infinite linear;
+}
+
+@keyframes animatedText {
+  to {
+    background-position: -50%;
+  }
+}

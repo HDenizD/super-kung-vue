@@ -11,7 +11,7 @@
             class="animate__slower"
           >
             <h1
-              class="hero-text inline-block bg-clip-text text-center font-brushking text-6xl italic leading-[8rem] tracking-widest text-transparent bg-blend-soft-light"
+              class="animated-text inline-block bg-clip-text text-center font-brushking text-6xl italic leading-[8rem] tracking-widest text-transparent bg-blend-soft-light"
             >
               Super <br />
               Kung Vue
@@ -53,25 +53,5 @@ onMounted(() => {
 <style scoped>
 .md-absolute-center {
   @apply md:absolute md:left-2/4 md:top-2/4 md:-translate-x-2/4 md:-translate-y-2/4 md:justify-center;
-}
-
-.hero-text {
-  background-image: linear-gradient(
-    to left,
-    #41b983,
-    #354a5f,
-    #41b983,
-    #41b983
-  );
-  background-position: 100%;
-  background-size: 300%;
-
-  animation: animatedText 5s infinite linear;
-}
-
-@keyframes animatedText {
-  to {
-    background-position: -50%;
-  }
 }
 </style>
