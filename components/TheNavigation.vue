@@ -1,5 +1,16 @@
 <template>
   <div class="mx-auto flex w-screen items-center justify-between">
+    <Transition
+      enter-active-class="animate__lightSpeedInLeft"
+      leave-active-class="animate__lightSpeedOutLeft animate__faster"
+    >
+      <h1
+        v-if="$route.fullPath !== '/'"
+        class="animate__animated inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-center font-brushking tracking-widest text-transparent"
+      >
+        Super Kung Vue
+      </h1>
+    </Transition>
     <div
       class="group flex cursor-pointer select-none items-center gap-1"
       @click="
@@ -9,7 +20,6 @@
         }
       "
     ></div>
-
     <button
       class="z-20 md:hidden"
       @click="isMobileNavOpen = !isMobileNavOpen"
