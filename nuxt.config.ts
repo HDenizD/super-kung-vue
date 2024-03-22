@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   googleFonts: {
     download: true,
     families: {
-      Poppins: true,
+      'Press+Start+2P': true,
       'Great+Vibes': true,
       Satisfy: true,
       Merriweather: true

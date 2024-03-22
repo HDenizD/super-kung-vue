@@ -1,0 +1,6 @@
+@layer base {
+  @font-face {
+    font-family: 'BrushKing';
+    src: url('./../fonts/Brush_King.otf') format('opentype');
+  }
+}

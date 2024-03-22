@@ -47,36 +47,13 @@
       </div>
     </Transition>
     <ul class="hidden gap-8 md:flex">
-      <li>Nav Menu</li>
+      <!-- <li>Nav Menu</li> -->
       <ColorModeToggle />
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
-const navItems = [
-  {
-    name: 'Startseite',
-    href: '/'
-  },
-  {
-    name: 'Leistungen',
-    href: '/leistungen'
-  },
-  {
-    name: 'Über uns',
-    href: '/ueber-uns'
-  },
-  {
-    name: 'Karriere',
-    href: '/karriere'
-  },
-  {
-    name: 'Kontakt',
-    href: '/kontakt'
-  }
-]
-
 const isMobileNavOpen = ref(false)
 
 watch(isMobileNavOpen, () => {

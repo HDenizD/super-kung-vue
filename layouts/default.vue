@@ -6,13 +6,13 @@
       >
         <TheNavigation />
       </header>
-      <main class="flex-grow px-4 py-5">
+      <main class="flex-grow p-3">
         <div class="mx-auto max-w-7xl">
           <slot />
         </div>
       </main>
       <footer
-        class="animate__animated animate__fadeInUp dark:border-tertiary relative flex h-auto items-center overflow-hidden rounded-b-lg bg-light px-5 pb-16 shadow-lg md:py-2 dark:bg-dark"
+        class="dark:border-tertiary relative bottom-0 right-0 flex h-auto w-full items-center justify-end overflow-hidden bg-light bg-opacity-95 px-5 shadow-lg md:py-2 dark:bg-dark dark:bg-opacity-95"
       >
         <TheFooter />
       </footer>

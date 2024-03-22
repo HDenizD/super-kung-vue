@@ -24,7 +24,9 @@ export default <Config>{
       fontFamily: {
         body: ['"Poppins"', 'sans-serif'],
         handwritten: ['"Satisfy"', 'cursive'],
-        sans: ['"Merriweather"', 'serif']
+        sans: ['"Merriweather"', 'serif'],
+        retro: ['"Press Start 2P"', 'cursive'],
+        brushking: ['"BrushKing"', 'cursive']
       }
     }
   },
