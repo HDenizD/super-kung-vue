@@ -12,10 +12,12 @@
           <KVBtn
             is-retro
             label="START"
+            @click="$router.push('/game/player-name')"
           />
           <KVBtn
             is-retro
             label="SETTINGS"
+            @click="$router.push('/settings')"
           />
         </div>
       </div>
