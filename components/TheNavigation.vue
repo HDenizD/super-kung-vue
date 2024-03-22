@@ -2,7 +2,7 @@
   <div class="mx-auto flex h-10 w-screen items-center justify-between">
     <Transition
       enter-active-class="animate__lightSpeedInLeft"
-      leave-active-class="animate__lightSpeedOutLeft animate__faster"
+      leave-active-class="animate__fadeOutRightBig animate__faster"
     >
       <h1
         v-if="$route.fullPath !== '/'"
