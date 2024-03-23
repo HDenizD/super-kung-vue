@@ -15,6 +15,8 @@
 <script setup lang="ts">
 import { usePlayerStore } from '@/store/player'
 
+const emit = defineEmits(['update:charge-health-complete'])
+
 const props = defineProps({
   playerHealth: {
     type: Number,
@@ -37,6 +39,7 @@ function chargePlayerHealthTill100() {
       clearInterval(interval)
       setTimeout(() => {
         isCharging.value = false
+        emit('update:charge-health-complete')
       }, 1000)
     }
   }, 10)

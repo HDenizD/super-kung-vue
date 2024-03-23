@@ -4,7 +4,7 @@
     class="absolute-center animate__slower"
   >
     <form
-      @submit.prevent="setPlayerName(playerName)"
+      @submit.prevent="startGame()"
       class="flex flex-col gap-4"
     >
       <KVInput
@@ -18,11 +18,15 @@
         class="mx-auto"
         is-retro
       />
+      <PlayerHealthBar
+        :class="
+          showPlayerHealth ? 'opacity-100' : 'pointer-events-none opacity-0'
+        "
+        :is-charge-health="isChargeHealth"
+        :player-health="playerHealth"
+        @update:charge-health-complete="isChargeHealthComplete = true"
+      />
     </form>
-    <PlayerHealthBar
-      :is-charge-health="isChargeHealth"
-      :player-health="playerHealth"
-    />
   </div>
 </template>
 
@@ -30,16 +34,32 @@
 import { usePlayerStore } from '@/store/player'
 const { observeElement } = useEasyIntersectionObserver()
 const { playerName, playerHealth } = storeToRefs(usePlayerStore())
+const router = useRouter()
 
 const playerNameForm = ref()
 const isChargeHealth = ref(false)
+const showPlayerHealth = ref(false)
+const isChargeHealthComplete = ref(false)
 
-function setPlayerName(name: string) {
-  if (name) {
-    console.log(name)
+function startGame() {
+  if (playerName.value) {
     isChargeHealth.value = true
+    showPlayerHealth.value = true
   }
 }
+
+watch(
+  () => isChargeHealthComplete.value,
+  () => {
+    if (isChargeHealthComplete.value) {
+      console.log('Game started!')
+      isChargeHealth.value = false
+      setTimeout(() => {
+        router.push('/game/stage-1')
+      }, 1000)
+    }
+  }
+)
 
 onMounted(() => {
   observeElement(playerNameForm.value, 'animate__fadeIn')
