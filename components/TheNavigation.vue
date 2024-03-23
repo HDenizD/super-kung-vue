@@ -6,6 +6,7 @@
     >
       <h1
         v-if="$route.fullPath !== '/'"
+        :class="isLogoLoading && 'animated-text'"
         class="animate__animated inline-block cursor-pointer bg-gradient-to-r from-primary to-secondary bg-clip-text text-center font-brushking tracking-widest text-transparent"
         @click="$router.push('/')"
       >
@@ -58,13 +59,23 @@
       </div>
     </Transition>
     <ul class="hidden gap-8 md:flex">
-      <!-- <li>Nav Menu</li> -->
+      <li
+        v-if="isGameInProgress"
+        class="cursor-pointer font-retro hover:text-primary"
+        @click="$router.push('/player-stats')"
+      >
+        {{ playerName }}
+      </li>
       <ColorModeToggle />
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
+import { usePlayerStore } from '~/store/player'
+import { useAppStore } from '~/store/app'
+const { playerName, isGameInProgress } = storeToRefs(usePlayerStore())
+const { isLogoLoading } = storeToRefs(useAppStore())
 const isMobileNavOpen = ref(false)
 
 watch(isMobileNavOpen, () => {

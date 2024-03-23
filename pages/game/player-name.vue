@@ -32,8 +32,12 @@
 
 <script setup lang="ts">
 import { usePlayerStore } from '@/store/player'
+import { useAppStore } from '~/store/app'
 const { observeElement } = useEasyIntersectionObserver()
-const { playerName, playerHealth } = storeToRefs(usePlayerStore())
+const { playerName, playerHealth, isGameInProgress } =
+  storeToRefs(usePlayerStore())
+
+const { isLogoLoading } = storeToRefs(useAppStore())
 const router = useRouter()
 
 const playerNameForm = ref()
@@ -43,6 +47,7 @@ const isChargeHealthComplete = ref(false)
 
 function startGame() {
   if (playerName.value) {
+    isLogoLoading.value = true
     isChargeHealth.value = true
     showPlayerHealth.value = true
   }
@@ -56,6 +61,8 @@ watch(
       isChargeHealth.value = false
       setTimeout(() => {
         router.push('/game/stage-1')
+        isGameInProgress.value = true
+        isLogoLoading.value = false
       }, 1000)
     }
   }

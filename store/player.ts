@@ -1,4 +1,5 @@
 export const usePlayerStore = defineStore('player', () => {
+  const isGameInProgress = ref(false)
   const playerName = ref('')
   const playerHealth = ref(0)
 
@@ -12,6 +13,7 @@ export const usePlayerStore = defineStore('player', () => {
   return {
     playerName,
     playerHealth,
-    playerStats
+    playerStats,
+    isGameInProgress
   }
 })
