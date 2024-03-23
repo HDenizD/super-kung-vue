@@ -22,6 +22,13 @@
             class="animate__slower mt-14 flex flex-col gap-10"
           >
             <KVBtn
+              v-if="isGameInProgress"
+              is-retro
+              label="CONTINUE"
+              @click="$router.push('/game/player-name')"
+            />
+            <KVBtn
+              v-else
               is-retro
               label="START"
               @click="$router.push('/game/player-name')"
@@ -39,8 +46,12 @@
 </template>
 
 <script setup lang="ts">
+import { usePlayerStore } from '~/store/player'
+
 const heroText = ref()
 const gameOptions = ref()
+
+const { isGameInProgress } = usePlayerStore()
 
 const { observeElement } = useEasyIntersectionObserver()
 

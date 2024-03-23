@@ -69,6 +69,9 @@ watch(
 )
 
 onMounted(() => {
+  if (isGameInProgress.value) {
+    router.push('/')
+  }
   observeElement(playerNameForm.value, 'animate__fadeIn')
 })
 </script>
