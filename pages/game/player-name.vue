@@ -60,7 +60,7 @@ watch(
       console.log('Game started!')
       isChargeHealth.value = false
       setTimeout(() => {
-        router.push('/game/stage-1')
+        router.push('/game/hub')
         isGameInProgress.value = true
         isLogoLoading.value = false
       }, 1000)
@@ -71,6 +71,8 @@ watch(
 onMounted(() => {
   if (isGameInProgress.value) {
     router.push('/')
+  } else {
+    // router.push('/game/hub')
   }
   observeElement(playerNameForm.value, 'animate__fadeIn')
 })
