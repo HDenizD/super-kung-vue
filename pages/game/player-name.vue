@@ -19,18 +19,25 @@
         is-retro
       />
     </form>
+    <PlayerHealthBar
+      :is-charge-health="isChargeHealth"
+      :player-health="playerHealth"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import { usePlayerStore } from '@/store/player'
 const { observeElement } = useEasyIntersectionObserver()
+const { playerName, playerHealth } = storeToRefs(usePlayerStore())
 
-const playerName = ref('')
 const playerNameForm = ref()
+const isChargeHealth = ref(false)
 
 function setPlayerName(name: string) {
   if (name) {
     console.log(name)
+    isChargeHealth.value = true
   }
 }
 
