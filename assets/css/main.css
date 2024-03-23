@@ -12,3 +12,11 @@ html {
 body {
   @apply mx-auto h-screen overflow-x-hidden overflow-y-scroll bg-light  font-body text-dark dark:bg-dark dark:text-light;
 }
+
+.md-absolute-center {
+  @apply md:absolute md:left-2/4 md:top-2/4 md:-translate-x-2/4 md:-translate-y-2/4 md:justify-center;
+}
+
+.absolute-center {
+  @apply absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 justify-center;
+}

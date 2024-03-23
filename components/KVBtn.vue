@@ -1,7 +1,7 @@
 <template>
   <button
     v-if="!icon"
-    class="opacity-65 hover:opacity-100"
+    class="uppercase opacity-65 hover:opacity-100"
     :class="[isRetro && 'font-retro', isBrushKing && 'font-brushking']"
   >
     {{ label }}

@@ -6,7 +6,8 @@
     >
       <h1
         v-if="$route.fullPath !== '/'"
-        class="animate__animated inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-center font-brushking tracking-widest text-transparent"
+        class="animate__animated inline-block cursor-pointer bg-gradient-to-r from-primary to-secondary bg-clip-text text-center font-brushking tracking-widest text-transparent"
+        @click="$router.push('/')"
       >
         Super Kung Vue
       </h1>

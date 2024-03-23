@@ -50,8 +50,4 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
-.md-absolute-center {
-  @apply md:absolute md:left-2/4 md:top-2/4 md:-translate-x-2/4 md:-translate-y-2/4 md:justify-center;
-}
-</style>
+<style scoped></style>
