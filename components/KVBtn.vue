@@ -2,7 +2,11 @@
   <button
     v-if="!icon"
     class="uppercase opacity-65 hover:opacity-100"
-    :class="[isRetro && 'font-retro', isBrushKing && 'font-brushking']"
+    :class="[
+      isRetro && 'font-retro',
+      isBrushKing && 'font-brushking',
+      outline && 'kv-outline-primary'
+    ]"
   >
     {{ label }}
   </button>
@@ -29,6 +33,10 @@ defineProps({
     default: false
   },
   isBrushKing: {
+    type: Boolean,
+    default: false
+  },
+  outline: {
     type: Boolean,
     default: false
   }

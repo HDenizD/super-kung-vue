@@ -9,7 +9,7 @@
     <input
       id="player-name"
       v-model="inputValue"
-      class="rounded bg-light p-2 font-retro outline outline-2 outline-primary dark:bg-dark"
+      class="kv-outline-primary bg-light font-retro dark:bg-dark"
       type="text"
       :required="required"
     />

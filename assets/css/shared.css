@@ -1,0 +1,3 @@
+.kv-outline-primary {
+  @apply rounded p-2 outline outline-2 outline-primary;
+}
