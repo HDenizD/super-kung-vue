@@ -12,6 +12,33 @@ export const usePlayerStore = defineStore('player', () => {
     }
   }
 
+  function resetPlayer() {
+    playerName.value = ''
+    playerHealth.value = 0
+  }
+
+  function updatePlayerName(name: string) {
+    playerName.value = name
+  }
+
+  function isDamageRulesValid(damage: number): boolean {
+    if (damage < 0) {
+      console.error('Damage cannot be negative')
+      return false
+    }
+    if (damage > playerHealth.value) {
+      console.error('Damage cannot exceed player health')
+      return false
+    }
+    return true
+  }
+
+  function reducePlayerHealthBy(damage: number) {
+    if (isDamageRulesValid(damage)) {
+      playerHealth.value -= damage
+    }
+  }
+
   const playerStats = computed(() => {
     return {
       name: playerName.value,
@@ -24,6 +51,9 @@ export const usePlayerStore = defineStore('player', () => {
     playerHealth,
     playerStats,
     isGameInProgress,
-    toggleGameInProgress
+    toggleGameInProgress,
+    reducePlayerHealthBy,
+    resetPlayer,
+    updatePlayerName
   }
 })
