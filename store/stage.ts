@@ -41,6 +41,11 @@ export const useStageStore = defineStore(
       }
     }
 
+    function resetStages() {
+      stages.value = []
+      initStages()
+    }
+
     function stageConstructor(
       question: string,
       damageOnWrongAnswer: number,
@@ -89,8 +94,9 @@ export const useStageStore = defineStore(
       getStageById,
       toggleCompleteState,
       initStages,
-      checkIfAllPreviousStageIsNotCompletedAndLockIt
+      checkIfAllPreviousStageIsNotCompletedAndLockIt,
+      resetStages
     }
   },
-  { persist: true }
+  { persist: { storage: persistedState.localStorage } }
 )
