@@ -5,6 +5,10 @@
       :key="stage.id"
       :title="stage.title"
       :isLocked="checkIfAllPreviousStageIsNotCompletedAndLockIt(stage.id)"
+      @click="
+        isClickableBecauseAllPreviousStagesAreCompleted(stage.id) &&
+          $router.push(`/game/stage-${stage.id}`)
+      "
     />
   </div>
 </template>
@@ -14,6 +18,10 @@ import { useStageStore } from '~/store/stage'
 
 const { stages, checkIfAllPreviousStageIsNotCompletedAndLockIt } =
   useStageStore()
+
+const isClickableBecauseAllPreviousStagesAreCompleted = (stageId: string) => {
+  return !checkIfAllPreviousStageIsNotCompletedAndLockIt(stageId)
+}
 </script>
 
 <style scoped></style>
