@@ -1,7 +1,10 @@
 <template>
   <div
-    class="kv-outline-primary hover:bg-secondary-100 w-52 cursor-pointer transition-all hover:scale-105 hover:shadow-lg"
-    :class="[isCheckCorrect, isLocked && 'cursor-not-allowed opacity-50']"
+    class="kv-outline-primary hover:bg-secondary-100 w-52 cursor-pointer select-none transition-all hover:shadow-lg"
+    :class="[
+      isCheckCorrect,
+      isLocked ? 'cursor-not-allowed opacity-50' : 'hover:scale-105'
+    ]"
   >
     <h3 class="text-center font-retro text-base">{{ title }}</h3>
   </div>
