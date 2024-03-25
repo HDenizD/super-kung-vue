@@ -31,6 +31,13 @@ export const useStageStore = defineStore('stage', () => {
     return stages.value.find((stage) => stage.id === stageId)
   })
 
+  function toggleCompleteState(stageId: string) {
+    const stage = getStageById.value(stageId)
+    if (stage) {
+      stage.isCompleted = !stage.isCompleted
+    }
+  }
+
   function stageConstructor(
     question: string,
     damageOnWrongAnswer: number,
@@ -77,6 +84,7 @@ export const useStageStore = defineStore('stage', () => {
     stages,
     indexBasedStagesTitleAndId,
     getStageById,
+    toggleCompleteState,
     initStages,
     checkIfAllPreviousStageIsNotCompletedAndLockIt
   }
