@@ -5,10 +5,11 @@
       :key="stage.id"
       :title="stage.title"
       :index="index"
-      :isLocked="
-        checkIfAllPreviousStageIsNotCompletedAndLockIt(stage.id as string)
+      :isLocked="checkIfAllPreviousStageIsNotCompletedAndLockIt(stage.id)"
+      @click="
+        isClickableBecauseAllPreviousStagesAreCompleted(stage.id) &&
+          $router.push(`/game/stage-${stage.id}`)
       "
-      @click="$router.push(`/game/stage-${stage.id}`)"
     />
   </div>
 </template>
