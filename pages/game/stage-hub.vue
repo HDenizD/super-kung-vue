@@ -17,15 +17,12 @@
 <script setup lang="ts">
 import { useStageStore } from '~/store/stage'
 
-const { checkIfAllPreviousStageIsNotCompletedAndLockIt, initStages } =
-  useStageStore()
+const { checkIfAllPreviousStageIsNotCompletedAndLockIt } = useStageStore()
 const { indexBasedStagesTitleAndId } = storeToRefs(useStageStore())
 
 const isClickableBecauseAllPreviousStagesAreCompleted = (stageId: string) => {
   return !checkIfAllPreviousStageIsNotCompletedAndLockIt(stageId)
 }
-
-initStages()
 </script>
 
 <style scoped></style>
