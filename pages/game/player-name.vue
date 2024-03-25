@@ -60,7 +60,7 @@ watch(
       console.log('Game started!')
       isChargeHealth.value = false
       setTimeout(() => {
-        router.push('/game/hub')
+        router.push('/game/stage-hub')
         isGameInProgress.value = true
         isLogoLoading.value = false
       }, 1000)

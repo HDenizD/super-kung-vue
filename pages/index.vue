@@ -25,7 +25,7 @@
               v-if="isGameInProgress"
               is-retro
               label="CONTINUE"
-              @click="$router.push('/game/hub')"
+              @click="$router.push('/game/stage-hub')"
             />
             <KVBtn
               v-else

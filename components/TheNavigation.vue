@@ -58,7 +58,13 @@
         </div>
       </div>
     </Transition>
-    <ul class="hidden gap-8 md:flex">
+    <ul class="hidden items-center gap-8 md:flex">
+      <li v-if="isGameInProgress">
+        <PlayerHealthBar
+          :player-health="playerHealth"
+          is-small
+        />
+      </li>
       <li
         v-if="isGameInProgress"
         class="cursor-pointer font-retro hover:text-primary"
@@ -74,7 +80,8 @@
 <script setup lang="ts">
 import { usePlayerStore } from '~/store/player'
 import { useAppStore } from '~/store/app'
-const { playerName, isGameInProgress } = storeToRefs(usePlayerStore())
+const { playerName, isGameInProgress, playerHealth } =
+  storeToRefs(usePlayerStore())
 const { isLogoLoading } = storeToRefs(useAppStore())
 const isMobileNavOpen = ref(false)
 

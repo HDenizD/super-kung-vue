@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  @apply mx-auto h-screen overflow-x-hidden overflow-y-scroll bg-light  font-body text-dark dark:bg-dark dark:text-light;
+  @apply mx-auto h-screen overflow-x-hidden overflow-y-scroll  bg-light font-body text-dark dark:bg-dark dark:text-light;
 }
 
 .md-absolute-center {

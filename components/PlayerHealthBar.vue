@@ -1,9 +1,13 @@
 <template>
   <div
     class="animate__animated flex items-center justify-center"
-    :class="isCharging && 'animate__flash animate__infinite'"
+    :class="[
+      isCharging && 'animate__flash animate__infinite',
+      isSmall ? 'h-10' : 'h-12',
+      isFullWidth ? 'w-full' : 'w-96'
+    ]"
   >
-    <div class="relative h-12 w-96 rounded bg-gray-800">
+    <div class="relative h-full w-full rounded bg-gray-800">
       <div
         class="absolute left-0 top-0 h-full rounded bg-primary transition-all duration-1000"
         :style="{ width: playerHealth + '%' }"
@@ -23,6 +27,14 @@ const props = defineProps({
     required: true
   },
   isChargeHealth: {
+    type: Boolean,
+    default: false
+  },
+  isSmall: {
+    type: Boolean,
+    default: false
+  },
+  isFullWidth: {
     type: Boolean,
     default: false
   }
