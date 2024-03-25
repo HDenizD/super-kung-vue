@@ -26,7 +26,7 @@ const props = defineProps({
   },
   isLocked: {
     type: Boolean,
-    default: true
+    default: false
   }
 })
 

@@ -1,14 +1,15 @@
 <template>
   <div>Stage-{{ $route.params.id }}</div>
+  <pre>{{ stageData }}</pre>
 </template>
 
 <script setup lang="ts">
 import { useStageStore } from '~/store/stage'
 const route = useRoute()
 
-const { getStage } = useStageStore()
+const { getStageById } = useStageStore()
 
-const stageData = ref(getStage(route.params.id as string))
+const stageData = ref(getStageById(route.params.id as string))
 
 onMounted(() => {
   console.log(stageData)
