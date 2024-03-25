@@ -4,7 +4,7 @@
       v-for="stage in stages"
       :key="stage.id"
       :title="stage.title"
-      :isLocked="checkIfPreviousStageIsNotCompletedAndLockIt(stage.id)"
+      :isLocked="checkIfAllPreviousStageIsNotCompletedAndLockIt(stage.id)"
     />
   </div>
 </template>
@@ -12,7 +12,8 @@
 <script setup lang="ts">
 import { useStageStore } from '~/store/stage'
 
-const { stages, checkIfPreviousStageIsNotCompletedAndLockIt } = useStageStore()
+const { stages, checkIfAllPreviousStageIsNotCompletedAndLockIt } =
+  useStageStore()
 </script>
 
 <style scoped></style>

@@ -115,19 +115,23 @@ export const useStageStore = defineStore('stage', () => {
     }
   ])
 
-  function checkIfPreviousStageIsNotCompletedAndLockIt(
+  function checkIfAllPreviousStageIsNotCompletedAndLockIt(
     stageId: string
   ): boolean {
     const currentStageIndex = stages.value.findIndex(
       (stage) => stage.id === stageId
     )
     if (currentStageIndex === 0) return false
-    const previousStage = stages.value[currentStageIndex - 1]
-    return !previousStage.isCompleted
+    for (let i = 0; i < currentStageIndex; i++) {
+      if (!stages.value[i].isCompleted) {
+        return true
+      }
+    }
+    return false
   }
 
   return {
     stages,
-    checkIfPreviousStageIsNotCompletedAndLockIt
+    checkIfAllPreviousStageIsNotCompletedAndLockIt
   }
 })
