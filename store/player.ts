@@ -4,6 +4,14 @@ export const usePlayerStore = defineStore('player', () => {
   const playerName = ref('')
   const playerHealth = ref(0)
 
+  function toggleGameInProgress() {
+    isGameInProgress.value = !isGameInProgress.value
+    if (isGameInProgress.value) {
+      playerName.value = 'Deniz'
+      playerHealth.value = 100
+    }
+  }
+
   const playerStats = computed(() => {
     return {
       name: playerName.value,
@@ -15,6 +23,7 @@ export const usePlayerStore = defineStore('player', () => {
     playerName,
     playerHealth,
     playerStats,
-    isGameInProgress
+    isGameInProgress,
+    toggleGameInProgress
   }
 })

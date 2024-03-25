@@ -51,7 +51,7 @@ import { usePlayerStore } from '~/store/player'
 const heroText = ref()
 const gameOptions = ref()
 
-const { isGameInProgress } = usePlayerStore()
+const { isGameInProgress } = storeToRefs(usePlayerStore())
 
 const { observeElement } = useEasyIntersectionObserver()
 

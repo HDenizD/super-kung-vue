@@ -9,6 +9,7 @@
         </header>
         <main class="flex-grow">
           <PlayerHealthBar
+            v-if="isGameInProgress"
             class="md:hidden"
             :player-health="playerHealth"
             is-small
@@ -29,7 +30,7 @@
 <script setup lang="ts">
 import { usePlayerStore } from '~/store/player'
 
-const { playerHealth } = storeToRefs(usePlayerStore())
+const { playerHealth, isGameInProgress } = storeToRefs(usePlayerStore())
 </script>
 
 <style></style>
