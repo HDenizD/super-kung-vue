@@ -12,8 +12,4 @@ export default defineNuxtRouteMiddleware((to, from) => {
   if (!isGameInProgress.value && !isPublicRoute) {
     return navigateTo('/game/player-name')
   }
-
-  console.log('isGameInProgress:', isGameInProgress.value)
-  console.log('to:', to.path)
-  console.log('from:', from.path)
 })

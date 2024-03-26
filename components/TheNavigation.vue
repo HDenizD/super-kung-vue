@@ -67,8 +67,7 @@
       </li>
       <li
         v-if="isGameInProgress"
-        class="cursor-pointer font-retro hover:text-primary"
-        @click="$router.push('/player-stats')"
+        class="font-retro"
       >
         {{ playerName }}
       </li>

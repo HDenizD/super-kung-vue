@@ -25,13 +25,13 @@
           />
         </div>
       </div>
-      <div class="mt-5 flex w-full justify-between gap-2">
-        <KVBtn
+      <div class="mt-5 flex w-full justify-end gap-2">
+        <!-- <KVBtn
           label="Skip"
           is-retro
           is-upper-case
           @click="handleSkip"
-        />
+        /> -->
         <KVBtn
           label="Submit Answer"
           is-retro
