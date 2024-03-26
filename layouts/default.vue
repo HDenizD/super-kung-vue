@@ -7,7 +7,7 @@
         >
           <TheNavigation />
         </header>
-        <main class="relative my-10 flex-grow">
+        <main class="relative my-8 flex-grow">
           <div class="px-2 md:px-4">
             <slot />
           </div>
