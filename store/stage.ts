@@ -84,7 +84,12 @@ export const useStageStore = defineStore(
             question.options
           )
         })
+        randomizeStages(stages.value)
       }
+    }
+
+    function randomizeStages(stages: Stage[]) {
+      stages.sort(() => Math.random() - 0.5)
     }
 
     function checkIfAllPreviousStageIsNotCompletedAndLockIt(
