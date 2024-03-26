@@ -1,12 +1,13 @@
 <template>
   <button
     v-if="!icon"
-    class="opacity-65 hover:opacity-100"
+    class="hover:opacity-100"
     :class="[
       isUpperCase && 'uppercase',
       isRetro && 'font-retro',
       isBrushKing && 'font-brushking',
-      outline && 'kv-outline-primary'
+      outline && 'kv-outline-primary',
+      isFullOpacity ? 'opacity-100' : 'opacity-65'
     ]"
   >
     {{ label }}
@@ -24,6 +25,10 @@ defineProps({
   label: {
     type: String,
     default: ''
+  },
+  isFullOpacity: {
+    type: Boolean,
+    default: false
   },
   isUpperCase: {
     type: Boolean,

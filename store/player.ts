@@ -3,7 +3,6 @@ export const usePlayerStore = defineStore(
   'player',
   () => {
     const router = useRouter()
-    const { resetStages } = useStageStore()
 
     const isGameInProgress = ref(false)
     const playerName = ref('')
@@ -18,6 +17,7 @@ export const usePlayerStore = defineStore(
     }
 
     function resetGame() {
+      const { resetStages } = useStageStore()
       playerName.value = ''
       playerHealth.value = 0
       isGameInProgress.value = false

@@ -9,10 +9,19 @@
     </div>
     <div class="flex flex-col">
       <div class="mt-3 grid gap-4 md:grid-cols-4">
-        <div v-for="answer in stageData?.options">
+        <div
+          v-for="answer in stageData?.options"
+          :class="
+            selectedAnswer?.option === answer.option
+              ? 'bg-primary text-dark'
+              : ''
+          "
+        >
           <KVBtn
             :label="answer.option"
             class="kv-outline-primary h-32 w-full"
+            :is-full-opacity="selectedAnswer?.option === answer.option"
+            @click="selectedAnswer = answer"
           />
         </div>
       </div>
@@ -27,7 +36,7 @@
           label="Submit Answer"
           is-retro
           is-upper-case
-          @click="handleToggleComplete"
+          @click="handleSubmitAnswer"
         />
       </div>
     </div>
@@ -35,23 +44,23 @@
 </template>
 
 <script setup lang="ts">
-import { useStageStore } from '~/store/stage'
+import { useStageStore, type Option } from '~/store/stage'
 const route = useRoute()
 const router = useRouter()
 
-const { getStageById, toggleCompleteState } = useStageStore()
+const { getStageById, submitAnswer } = useStageStore()
 
 const stageData = ref(getStageById(route.params.id as string))
 
-const selectedAnswer = ref({})
+const selectedAnswer = ref<Option>()
 
-function handleToggleComplete() {
-  toggleCompleteState(route.params.id as string)
+function handleSubmitAnswer() {
+  if (!selectedAnswer.value) return
+  submitAnswer(route.params.id as string, selectedAnswer.value)
   router.push('/game/stage-hub')
 }
 
 function handleSkip() {
-  toggleCompleteState(route.params.id as string)
   router.push('/game/stage-hub')
 }
 

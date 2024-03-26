@@ -5,9 +5,14 @@
       :key="stage.id"
       :title="stage.title"
       :index="index"
-      :isLocked="checkIfAllPreviousStageIsNotCompletedAndLockIt(stage.id)"
+      :isCorrect="stage.hasCorrectAnswerSelected"
+      :isLocked="
+        stage.hasCorrectAnswerSelected ||
+        checkIfAllPreviousStageIsNotCompletedAndLockIt(stage.id)
+      "
       @click="
         isClickableBecauseAllPreviousStagesAreCompleted(stage.id) &&
+          !stage.hasCorrectAnswerSelected &&
           $router.push(`/game/stage-${stage.id}`)
       "
     />

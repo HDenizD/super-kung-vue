@@ -1,3 +1,4 @@
+import { usePlayerStore } from './player'
 //TODO: if questions are updated, reset stages and init them again
 import { questions } from '~/data/questions'
 
@@ -7,10 +8,11 @@ export type Stage = {
   isCompleted?: boolean
   options: Option[]
   question: string
+  hasCorrectAnswerSelected?: boolean | null
   damageOnWrongAnswer: number
 }
 
-type Option = {
+export type Option = {
   option: string
   isCorrect: boolean
 }
@@ -18,6 +20,7 @@ type Option = {
 export const useStageStore = defineStore(
   'stage',
   () => {
+    const { playerHealth } = storeToRefs(usePlayerStore())
     const stages = ref<Stage[]>([])
 
     const indexBasedStagesTitleAndId = computed(() => {
@@ -31,10 +34,19 @@ export const useStageStore = defineStore(
       return stages.value.find((stage) => stage.id === stageId)
     })
 
-    function toggleCompleteState(stageId: string) {
+    function submitAnswer(stageId: string, selectedAnswer: Option) {
       const stage = getStageById.value(stageId)
       if (stage) {
-        stage.isCompleted = !stage.isCompleted
+        if (!selectedAnswer.isCorrect) {
+          playerHealth.value -= stage.damageOnWrongAnswer
+        }
+
+        if (selectedAnswer !== null) {
+          stage.hasCorrectAnswerSelected = selectedAnswer.isCorrect
+        }
+        if (selectedAnswer.isCorrect) {
+          stage.isCompleted = !stage.isCompleted
+        }
       }
     }
 
@@ -44,9 +56,9 @@ export const useStageStore = defineStore(
     }
 
     function stageConstructor(
-      question: string,
-      damageOnWrongAnswer: number,
-      options: Option[]
+      question: Stage['question'],
+      damageOnWrongAnswer: Stage['damageOnWrongAnswer'],
+      options: Stage['options']
     ) {
       const newStage = {
         id: '',
@@ -54,6 +66,7 @@ export const useStageStore = defineStore(
         question,
         damageOnWrongAnswer,
         options,
+        hasCorrectAnswerSelected: null,
         isCompleted: false
       } as Stage
       stages.value.push(newStage)
@@ -93,7 +106,7 @@ export const useStageStore = defineStore(
       stages,
       indexBasedStagesTitleAndId,
       getStageById,
-      toggleCompleteState,
+      submitAnswer,
       initStages,
       checkIfAllPreviousStageIsNotCompletedAndLockIt,
       resetStages
