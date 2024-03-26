@@ -1,16 +1,12 @@
 //TODO: if questions are updated, reset stages and init them again
 import { questions } from '~/data/questions'
 
-type Stage = {
+export type Stage = {
   id?: string
   title?: string
-  isCompleted: boolean
-  question?: Question
-}
-
-export type Question = {
-  question: string
+  isCompleted?: boolean
   options: Option[]
+  question: string
   damageOnWrongAnswer: number
 }
 
@@ -59,13 +55,11 @@ export const useStageStore = defineStore(
         damageOnWrongAnswer,
         options,
         isCompleted: false
-      } as unknown as Stage
+      } as Stage
       stages.value.push(newStage)
     }
 
     function initStages() {
-      console.log('Questions', questions.length)
-      console.log('Stages', stages.value.length)
       if (questions.length !== stages.value.length) {
         stages.value = []
       }

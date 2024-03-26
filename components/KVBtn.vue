@@ -1,8 +1,9 @@
 <template>
   <button
     v-if="!icon"
-    class="uppercase opacity-65 hover:opacity-100"
+    class="opacity-65 hover:opacity-100"
     :class="[
+      isUpperCase && 'uppercase',
       isRetro && 'font-retro',
       isBrushKing && 'font-brushking',
       outline && 'kv-outline-primary'
@@ -23,6 +24,10 @@ defineProps({
   label: {
     type: String,
     default: ''
+  },
+  isUpperCase: {
+    type: Boolean,
+    default: false
   },
   icon: {
     type: String,
