@@ -32,9 +32,6 @@
 
 <script setup lang="ts">
 import { usePlayerStore } from '~/store/player'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
 
 const heroText = ref()
 const gameOptions = ref()
@@ -45,12 +42,10 @@ const { observeElement } = useEasyIntersectionObserver()
 
 function tryAgain() {
   resetGame('tryAgain')
-  router.push('/game/stage-hub')
 }
 
 function exitGame() {
   resetGame('exit')
-  router.push('/')
 }
 
 onMounted(() => {

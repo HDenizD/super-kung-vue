@@ -9,7 +9,7 @@ export const usePlayerStore = defineStore(
     const playerHealth = ref(0)
 
     watch(playerHealth, () => {
-      if (playerHealth.value <= 0) {
+      if (playerHealth.value <= 0 && isGameInProgress.value) {
         console.log('Game Over')
         isGameInProgress.value = false
         router.push('/game/over')
@@ -29,15 +29,15 @@ export const usePlayerStore = defineStore(
       if (mode === 'tryAgain') {
         playerHealth.value = 100
         isGameInProgress.value = true
+        router.push('/game/stage-hub')
       }
       if (mode === 'exit') {
         playerName.value = ''
         playerHealth.value = 0
-        isGameInProgress.value = false
-        localStorage.clear()
+        router.push('/')
       }
+      localStorage.clear()
       resetStages()
-      router.push('/')
     }
 
     function updatePlayerName(name: string) {

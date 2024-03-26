@@ -33,11 +33,11 @@
               label="START"
               @click="$router.push('/game/player-name')"
             />
-            <KVBtn
+            <!-- <KVBtn
               is-retro
               label="SETTINGS"
               @click="$router.push('/settings')"
-            />
+            /> -->
           </div>
         </div>
       </Transition>
