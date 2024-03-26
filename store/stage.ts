@@ -1,3 +1,4 @@
+//TODO: if questions are updated, reset stages and init them again
 import { questions } from '~/data/questions'
 
 type Stage = {
@@ -63,14 +64,20 @@ export const useStageStore = defineStore(
     }
 
     function initStages() {
-      if (stages.value.length > 0) return
-      questions.forEach((question) => {
-        stageConstructor(
-          question.question,
-          question.damageOnWrongAnswer,
-          question.options
-        )
-      })
+      console.log('Questions', questions.length)
+      console.log('Stages', stages.value.length)
+      if (questions.length !== stages.value.length) {
+        stages.value = []
+      }
+      if (stages.value.length === 0) {
+        questions.forEach((question) => {
+          stageConstructor(
+            question.question,
+            question.damageOnWrongAnswer,
+            question.options
+          )
+        })
+      }
     }
 
     function checkIfAllPreviousStageIsNotCompletedAndLockIt(

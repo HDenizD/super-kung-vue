@@ -19,6 +19,8 @@ const { getStageById, toggleCompleteState } = useStageStore()
 
 const stageData = ref(getStageById(route.params.id as string))
 
+const selectedAnswer = ref({})
+
 function handleToggleComplete() {
   toggleCompleteState(route.params.id as string)
   router.push('/game/stage-hub')
