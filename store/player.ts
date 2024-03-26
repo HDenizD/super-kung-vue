@@ -10,7 +10,6 @@ export const usePlayerStore = defineStore(
 
     watch(playerHealth, () => {
       if (playerHealth.value <= 0 && isGameInProgress.value) {
-        console.log('Game Over')
         isGameInProgress.value = false
         router.push('/game/over')
       }

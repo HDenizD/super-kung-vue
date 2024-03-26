@@ -11,7 +11,7 @@
             class="animate__slower"
           >
             <h1
-              class="animated-text inline-block bg-clip-text text-center font-brushking text-6xl italic leading-[8rem] tracking-widest text-transparent bg-blend-soft-light"
+              class="animated-text inline-block bg-clip-text px-4 text-center font-brushking text-6xl italic leading-[8rem] tracking-widest text-transparent bg-blend-soft-light"
             >
               Super <br />
               Kung Vue
