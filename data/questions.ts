@@ -2,197 +2,161 @@ import { type Stage } from '~/store/stage'
 
 export const questions: Stage[] = [
   {
-    question: 'What is the purpose of the v-model directive in Vue.js?',
-    damageOnWrongAnswer: 20,
+    question: 'What is the new feature in Vue 3 for handling state?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
     options: [
-      {
-        option:
-          'To establish data binding between an input field and the underlying data source.',
-        isCorrect: true
-      },
-      {
-        option: 'To modify the structure of the DOM document.',
-        isCorrect: false
-      },
-      { option: 'To implement custom filters for data.', isCorrect: false },
-      {
-        option: 'To use conditional statements in templates.',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question: 'What is the main feature of Vue.js?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option: 'Component-based architecture',
-        isCorrect: true
-      },
-      {
-        option: 'Server-side rendering',
-        isCorrect: false
-      },
-      { option: 'Static typing', isCorrect: false },
-      {
-        option: 'Native mobile app development',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question: 'What does Vue.js use for rendering?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option: 'Virtual DOM',
-        isCorrect: true
-      },
-      {
-        option: 'Shadow DOM',
-        isCorrect: false
-      },
-      { option: 'Real DOM', isCorrect: false },
-      {
-        option: 'HTML5 Canvas',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question:
-      'What lifecycle hook is called right after the instance is created?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option: 'created',
-        isCorrect: true
-      },
-      {
-        option: 'mounted',
-        isCorrect: false
-      },
-      { option: 'updated', isCorrect: false },
-      {
-        option: 'destroyed',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question: 'What is the purpose of the `v-for` directive in Vue.js?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option: 'To render a list of items based on an array',
-        isCorrect: true
-      },
-      {
-        option: 'To loop over the properties of an object',
-        isCorrect: false
-      },
-      { option: 'To conditionally render an element', isCorrect: false },
-      {
-        option: 'To bind data to a form input field',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question: 'What is computed property in Vue.js?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option:
-          'A property whose value is calculated based on other data properties',
-        isCorrect: true
-      },
-      {
-        option: 'A property that is updated asynchronously',
-        isCorrect: false
-      },
-      { option: 'A property that can only be set once', isCorrect: false },
-      {
-        option: 'A property that triggers a method when accessed',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question: 'Which directive is used to conditionally display an element?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option: 'v-if',
-        isCorrect: true
-      },
-      {
-        option: 'v-show',
-        isCorrect: false
-      },
-      { option: 'v-bind', isCorrect: false },
-      {
-        option: 'v-model',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question: 'What is the purpose of the `v-bind` directive in Vue.js?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option: 'To dynamically bind an attribute to an expression',
-        isCorrect: true
-      },
-      {
-        option: 'To conditionally render an element',
-        isCorrect: false
-      },
-      { option: 'To iterate over a list', isCorrect: false },
-      {
-        option: 'To bind data to a form input field',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question: 'What is the purpose of the `v-on` directive in Vue.js?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option: 'To attach event listeners to DOM elements',
-        isCorrect: true
-      },
-      {
-        option: 'To dynamically bind an attribute to an expression',
-        isCorrect: false
-      },
-      { option: 'To conditionally render an element', isCorrect: false },
-      {
-        option: 'To bind data to a form input field',
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    question:
-      'Which Vue.js feature allows for code reuse and separation of concerns?',
-    damageOnWrongAnswer: 20,
-    options: [
-      {
-        option: 'Components',
-        isCorrect: true
-      },
-      {
-        option: 'Directives',
-        isCorrect: false
-      },
+      { option: 'Composition API', isCorrect: true },
       { option: 'Mixins', isCorrect: false },
-      {
-        option: 'Filters',
-        isCorrect: false
-      }
+      { option: 'Directives', isCorrect: false },
+      { option: 'Components', isCorrect: false }
+    ]
+  },
+  {
+    question: 'What is the new method for creating a Vue 3 application?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'createApp', isCorrect: true },
+      { option: 'new Vue', isCorrect: false },
+      { option: 'Vue.create', isCorrect: false },
+      { option: 'Vue.init', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new feature in Vue 3 for code reuse and logic extraction?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'Composition API', isCorrect: true },
+      { option: 'Mixins', isCorrect: false },
+      { option: 'Directives', isCorrect: false },
+      { option: 'Components', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new Vue 3 directive for conditionally rendering elements once?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'v-memo', isCorrect: true },
+      { option: 'v-once', isCorrect: false },
+      { option: 'v-if', isCorrect: false },
+      { option: 'v-show', isCorrect: false }
+    ]
+  },
+  {
+    question: 'What is the new Vue 3 feature for handling side effects?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'watchEffect', isCorrect: true },
+      { option: 'watch', isCorrect: false },
+      { option: 'computed', isCorrect: false },
+      { option: 'methods', isCorrect: false }
+    ]
+  },
+  {
+    question: 'What is the new Vue 3 feature for deep reactivity?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'reactive', isCorrect: true },
+      { option: 'data', isCorrect: false },
+      { option: 'props', isCorrect: false },
+      { option: 'computed', isCorrect: false }
+    ]
+  },
+  {
+    question: 'What is the new Vue 3 feature for shallow reactivity?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'shallowReactive', isCorrect: true },
+      { option: 'data', isCorrect: false },
+      { option: 'props', isCorrect: false },
+      { option: 'computed', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new Vue 3 feature for creating read-only reactive objects?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'readonly', isCorrect: true },
+      { option: 'data', isCorrect: false },
+      { option: 'props', isCorrect: false },
+      { option: 'computed', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new Vue 3 feature for creating shallow read-only reactive objects?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'shallowReadonly', isCorrect: true },
+      { option: 'data', isCorrect: false },
+      { option: 'props', isCorrect: false },
+      { option: 'computed', isCorrect: false }
+    ]
+  },
+  {
+    question: 'What is the new Vue 3 feature for creating computed properties?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'computed', isCorrect: true },
+      { option: 'watch', isCorrect: false },
+      { option: 'methods', isCorrect: false },
+      { option: 'data', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new Vue 3 feature for watching reactive dependencies?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'watch', isCorrect: true },
+      { option: 'computed', isCorrect: false },
+      { option: 'methods', isCorrect: false },
+      { option: 'data', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new Vue 3 feature for watching reactive dependencies and running side effects?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'watchEffect', isCorrect: true },
+      { option: 'watch', isCorrect: false },
+      { option: 'computed', isCorrect: false },
+      { option: 'methods', isCorrect: false }
+    ]
+  },
+  {
+    question: 'What is the new Vue 3 feature for creating reactive references?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'ref', isCorrect: true },
+      { option: 'reactive', isCorrect: false },
+      { option: 'computed', isCorrect: false },
+      { option: 'watch', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new Vue 3 feature for creating custom reactive logic?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'customRef', isCorrect: true },
+      { option: 'ref', isCorrect: false },
+      { option: 'reactive', isCorrect: false },
+      { option: 'computed', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new Vue 3 feature for creating lifecycle hooks in the Composition API?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'onMounted, onUpdated, etc.', isCorrect: true },
+      { option: 'mounted, updated, etc.', isCorrect: false },
+      { option: 'useMounted, useUpdated, etc.', isCorrect: false },
+      { option: 'createMounted, createUpdated, etc.', isCorrect: false }
     ]
   }
 ]
