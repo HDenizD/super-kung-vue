@@ -60,9 +60,9 @@ function handleSubmitAnswer() {
   router.push('/game/stage-hub')
 }
 
-function handleSkip() {
-  router.push('/game/stage-hub')
-}
+// function handleSkip() {
+//   router.push('/game/stage-hub')
+// }
 
 onMounted(() => {
   console.log(stageData)
