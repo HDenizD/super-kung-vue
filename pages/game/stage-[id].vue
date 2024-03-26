@@ -54,6 +54,10 @@ const stageData = ref(getStageById(route.params.id as string))
 
 const selectedAnswer = ref<Option>()
 
+function shuffelIndexOfOptions(options: Option[]) {
+  return options.sort(() => Math.random() - 0.5)
+}
+
 function handleSubmitAnswer() {
   if (!selectedAnswer.value) return
   submitAnswer(route.params.id as string, selectedAnswer.value)
@@ -65,7 +69,9 @@ function handleSubmitAnswer() {
 // }
 
 onMounted(() => {
-  console.log(stageData)
+  if (stageData.value) {
+    shuffelIndexOfOptions(stageData.value.options)
+  }
 })
 </script>
 
