@@ -1,17 +1,17 @@
 <template>
-  <KVBtn
+  <!-- <KVBtn
     class="block"
     icon="material-symbols:settings-rounded"
     @click="$router.push('/settings')"
-  />
+  /> -->
+  <div class="font-retro text-xs opacity-50">v.1</div>
   <KVBtn
     v-if="isGameInProgress"
-    class="block"
     is-retro
+    is-upper-case
     label="Reset Game"
-    @click="resetGame()"
+    @click="resetGame('exit')"
   />
-  <div class="block font-retro text-xs opacity-50">v.1</div>
 </template>
 
 <script setup lang="ts">

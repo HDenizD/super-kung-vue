@@ -3,7 +3,7 @@ import { type Stage } from '~/store/stage'
 export const questions: Stage[] = [
   {
     question: 'What is the purpose of the v-model directive in Vue.js?',
-    damageOnWrongAnswer: 90,
+    damageOnWrongAnswer: 20,
     options: [
       {
         option:

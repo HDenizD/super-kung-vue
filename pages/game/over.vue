@@ -18,13 +18,13 @@
         is-retro
         is-uppercase
         label="Try Again?"
-        @click="tryAgain"
+        @click="resetGame('tryAgain')"
       />
       <KVBtn
         is-retro
         is-uppercase
         label="Nah, I'm Good"
-        @click="exitGame"
+        @click="resetGame('exit')"
       />
     </div>
   </div>
@@ -32,25 +32,24 @@
 
 <script setup lang="ts">
 import { usePlayerStore } from '~/store/player'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const heroText = ref()
 const gameOptions = ref()
 
 const { resetGame } = usePlayerStore()
+const { playerHealth } = storeToRefs(usePlayerStore())
 
 const { observeElement } = useEasyIntersectionObserver()
-
-function tryAgain() {
-  resetGame('tryAgain')
-}
-
-function exitGame() {
-  resetGame('exit')
-}
 
 onMounted(() => {
   observeElement(heroText.value, 'animate__fadeIn')
   observeElement(gameOptions.value, 'animate__fadeIn')
+
+  if (playerHealth.value > 0) {
+    router.push('/')
+  }
 })
 </script>
 
