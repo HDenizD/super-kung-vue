@@ -158,5 +158,115 @@ export const questions: Stage[] = [
       { option: 'useMounted, useUpdated, etc.', isCorrect: false },
       { option: 'createMounted, createUpdated, etc.', isCorrect: false }
     ]
+  },
+  {
+    question: 'What is the purpose of the `reactive` function in Vue 3?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'To create a reactive object', isCorrect: true },
+      { option: 'To define props in a component', isCorrect: false },
+      { option: 'To create a computed property', isCorrect: false },
+      { option: 'To define methods in a component', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'Which Vue 3 feature allows you to optimize re-renders by memoizing a value?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: '`v-memo`', isCorrect: true },
+      { option: '`v-once`', isCorrect: false },
+      { option: '`v-if`', isCorrect: false },
+      { option: '`v-show`', isCorrect: false }
+    ]
+  },
+  {
+    question: 'What is the syntax for defining a template ref in Vue 3?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: '`ref="myRef"`', isCorrect: true },
+      { option: '`#myRef`', isCorrect: false },
+      { option: '`v-ref="myRef"`', isCorrect: false },
+      { option: '`@ref.myRef`', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'Which Vue 3 feature allows you to dynamically bind CSS classes and styles?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: '`:class` and `:style`', isCorrect: true },
+      { option: '`v-bind:class` and `v-bind:style`', isCorrect: false },
+      { option: '`v-class` and `v-style`', isCorrect: false },
+      { option: '`class` and `style`', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'How can you conditionally render a component in Vue 3 based on a prop value?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'Using `v-if`', isCorrect: true },
+      { option: 'Using `v-show`', isCorrect: false },
+      { option: 'Using `v-once`', isCorrect: false },
+      { option: 'Using `v-memo`', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the new Vue 3 function for creating reactive references with mutable values?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: '`ref`', isCorrect: true },
+      { option: '`reactiveRef`', isCorrect: false },
+      { option: '`mutableRef`', isCorrect: false },
+      { option: '`createRef`', isCorrect: false }
+    ]
+  },
+  {
+    question: 'Which Vue 3 feature enables the creation of custom directives?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: '`v-directive`', isCorrect: false },
+      { option: '`v-custom`', isCorrect: false },
+      { option: '`customDirective`', isCorrect: false },
+      { option: '`directive`', isCorrect: true }
+    ]
+  },
+  {
+    question:
+      'How can you listen to a custom event emitted by a child component in Vue 3?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'Using `@custom-event`', isCorrect: true },
+      { option: 'Using `v-on:custom-event`', isCorrect: false },
+      { option: 'Using `v-model`', isCorrect: false },
+      { option: 'Using `v-bind:custom-event`', isCorrect: false }
+    ]
+  },
+  {
+    question:
+      'What is the purpose of the `toRefs` function in Vue 3 Composition API?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'To convert reactive objects into refs', isCorrect: false },
+      { option: 'To convert refs into plain objects', isCorrect: false },
+      { option: 'To convert refs into reactive objects', isCorrect: false },
+      {
+        option: 'To convert reactive objects into plain objects',
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    question:
+      'Which Vue 3 feature allows you to optimize performance by lazy loading components?',
+    damageOnWrongAnswer: Math.floor(Math.random() * 21) + 10,
+    options: [
+      { option: 'Async components', isCorrect: false },
+      { option: 'Dynamic components', isCorrect: false },
+      { option: 'Suspense', isCorrect: false },
+      { option: 'Teleport', isCorrect: true }
+    ]
   }
 ]
