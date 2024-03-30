@@ -13,7 +13,7 @@
         Super Kung Vue
       </h1>
     </Transition>
-    <ul class="absolute right-0 flex items-center gap-8 md:flex">
+    <ul class="flex flex-grow items-center justify-end gap-8">
       <li
         v-if="isGameInProgress"
         class="hidden md:block"
