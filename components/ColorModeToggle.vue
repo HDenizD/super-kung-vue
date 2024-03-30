@@ -1,19 +1,15 @@
 <template>
   <button
-    class="dark:outline-white scale-125 rounded-md text-white flex items-center"
+    class="flex scale-125 items-center rounded-md text-white dark:outline-white"
     @click="toggleDarkMode"
   >
     <Icon
-      v-if="
-        colorMode.preference === 'system' || colorMode.preference === 'dark'
-      "
+      v-if="colorMode.value === 'dark'"
       name="material-symbols:dark-mode-rounded"
       class="text-light hover:text-primary"
     />
     <Icon
-      v-if="
-        colorMode.preference === 'system' || colorMode.preference === 'light'
-      "
+      v-if="colorMode.value === 'light'"
       name="material-symbols:light-mode-rounded"
       class="text-dark hover:text-primary"
     />
@@ -24,10 +20,12 @@
 const colorMode = useColorMode()
 
 function toggleDarkMode() {
-  colorMode.preference === 'dark'
-    ? (colorMode.preference = 'light')
-    : (colorMode.preference = 'dark')
+  colorMode.value === 'dark'
+    ? (colorMode.value = 'light')
+    : (colorMode.value = 'dark')
 }
+
+console.log(colorMode)
 </script>
 
 <style scoped></style>
