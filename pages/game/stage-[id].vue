@@ -4,7 +4,7 @@
       class="kv-outline-primary flex h-96 flex-grow items-center justify-center"
     >
       <p class="p-5 font-retro text-base">
-        {{ target }}
+        {{ typeEffectTarget }}
       </p>
     </div>
     <div class="flex flex-col">
@@ -49,9 +49,7 @@ import { useTypeWriterEffect } from '~/composables/typeWriterEffect'
 
 const route = useRoute()
 const router = useRouter()
-const { typeWriterEffect } = useTypeWriterEffect()
-
-const target = ref('')
+const { typeWriterEffect, typeEffectTarget } = useTypeWriterEffect()
 
 const { getStageById, submitAnswer } = useStageStore()
 
@@ -72,9 +70,8 @@ function handleSubmitAnswer() {
 onMounted(() => {
   if (stageData.value) {
     shuffelIndexOfOptions(stageData.value.options)
+    typeWriterEffect(stageData.value.question, 30)
   }
-
-  typeWriterEffect(stageData.value?.question as string, target, 30)
 })
 </script>
 
