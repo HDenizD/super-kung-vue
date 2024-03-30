@@ -3,8 +3,8 @@
     <div
       class="kv-outline-primary flex h-96 flex-grow items-center justify-center"
     >
-      <p class="p-5 text-2xl">
-        {{ stageData?.question }}
+      <p class="p-5 font-retro text-base">
+        {{ target }}
       </p>
     </div>
     <div class="flex flex-col">
@@ -19,7 +19,7 @@
         >
           <KVBtn
             :label="answer.option"
-            class="kv-outline-primary h-32 w-full"
+            class="kv-outline-primary h-32 w-full font-retro text-xs"
             :is-full-opacity="selectedAnswer?.option === answer.option"
             @click="selectedAnswer = answer"
           />
@@ -45,8 +45,13 @@
 
 <script setup lang="ts">
 import { useStageStore, type Option } from '~/store/stage'
+import { useTypeWriterEffect } from '~/composables/typeWriterEffect'
+
 const route = useRoute()
 const router = useRouter()
+const { typeWriterEffect } = useTypeWriterEffect()
+
+const target = ref('')
 
 const { getStageById, submitAnswer } = useStageStore()
 
@@ -68,6 +73,8 @@ onMounted(() => {
   if (stageData.value) {
     shuffelIndexOfOptions(stageData.value.options)
   }
+
+  typeWriterEffect(stageData.value?.question as string, target, 30)
 })
 </script>
 
