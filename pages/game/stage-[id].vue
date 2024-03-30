@@ -25,13 +25,13 @@
           />
         </div>
       </div>
-      <div class="mt-5 flex w-full justify-end gap-2">
-        <!-- <KVBtn
-          label="Skip"
+      <div class="mt-5 flex w-full justify-between gap-2">
+        <KVBtn
+          label="Back"
           is-retro
           is-upper-case
-          @click="handleSkip"
-        /> -->
+          @click="$router.push('/game/stage-hub')"
+        />
         <KVBtn
           label="Submit Answer"
           is-retro
@@ -63,10 +63,6 @@ function handleSubmitAnswer() {
   submitAnswer(route.params.id as string, selectedAnswer.value)
   router.push('/game/stage-hub')
 }
-
-// function handleSkip() {
-//   router.push('/game/stage-hub')
-// }
 
 onMounted(() => {
   if (stageData.value) {
