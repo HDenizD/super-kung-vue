@@ -24,8 +24,6 @@ function toggleDarkMode() {
     ? (colorMode.value = 'light')
     : (colorMode.value = 'dark')
 }
-
-console.log(colorMode)
 </script>
 
 <style scoped></style>
