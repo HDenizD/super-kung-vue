@@ -5,12 +5,12 @@
   >
     <Icon
       v-if="colorMode.value === 'dark'"
-      name="material-symbols:dark-mode-rounded"
+      name="pixelarticons:moon"
       class="text-light hover:text-primary"
     />
     <Icon
       v-if="colorMode.value === 'light'"
-      name="material-symbols:light-mode-rounded"
+      name="pixelarticons:sun-alt"
       class="text-dark hover:text-primary"
     />
   </button>
