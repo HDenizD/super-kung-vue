@@ -31,6 +31,7 @@
               v-else
               is-retro
               label="START"
+              data-testid="start-game"
               @click="$router.push('/game/player-name')"
             />
             <!-- <KVBtn

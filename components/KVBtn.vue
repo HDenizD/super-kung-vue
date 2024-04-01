@@ -22,6 +22,10 @@
 
 <script setup lang="ts">
 defineProps({
+  testId: {
+    type: String,
+    default: ''
+  },
   label: {
     type: String,
     default: ''

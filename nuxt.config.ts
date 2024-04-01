@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/png', href: 'icons/favicon.ico' }]
+      link: [{ rel: 'icon', type: 'image/png', href: 'icons/favicon.ico' }],
+      title: 'Super Kung Vue - Quiz Game'
     }
   },
   devtools: { enabled: false },
