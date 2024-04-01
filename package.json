@@ -16,6 +16,8 @@
     "@nuxtjs/i18n": "^8.0.0",
     "@nuxtjs/tailwindcss": "^6.10.3",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.12.2",
     "nuxt": "^3.9.0",
     "nuxt-icon": "^0.6.8",
     "prettier": "^3.1.1",
