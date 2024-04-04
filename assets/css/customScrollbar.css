@@ -9,7 +9,7 @@
   @apply h-2 w-2;
 }
 *::-webkit-scrollbar-track {
-  @apply bg-dark;
+  @apply bg-light dark:bg-dark;
 }
 
 *::-webkit-scrollbar-track:hover {
