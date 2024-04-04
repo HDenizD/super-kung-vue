@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { baseUrl } from './urlRoutes'
+import { baseUrl, playerNameUrl } from './urlRoutes'
 
 test('App is running and page title says "Super Kung Vue"', async ({
   page
@@ -22,4 +22,11 @@ test('App has a heading', async ({ page }) => {
 
   const heading = await page.innerHTML('h1')
   expect(heading).toBe(' Super <br> Kung Vue ')
+})
+
+test('navigate back to index on logo click', async ({ page }) => {
+  await page.goto(playerNameUrl)
+  await page.getByRole('heading', { name: 'Super Kung Vue' }).click()
+  await page.waitForURL(baseUrl)
+  expect(page.url()).toBe(baseUrl)
 })
