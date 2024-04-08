@@ -21,6 +21,7 @@
             :label="answer.option"
             class="kv-outline-primary h-32 w-full font-retro text-xs"
             :is-full-opacity="selectedAnswer?.option === answer.option"
+            data-testid="option-button"
             @click="selectedAnswer = answer"
           />
         </div>
