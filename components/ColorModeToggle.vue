@@ -2,6 +2,7 @@
   <button
     class="flex scale-125 items-center rounded-md text-white dark:outline-white"
     @click="toggleDarkMode"
+    data-testid="color-mode-toggle"
   >
     <Icon
       v-if="colorMode.value === 'dark'"

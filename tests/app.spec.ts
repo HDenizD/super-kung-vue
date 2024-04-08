@@ -57,3 +57,12 @@ test('try again', async ({ page }) => {
   await page.waitForURL(stageHubUrl)
   expect(page.url()).toBe(stageHubUrl)
 })
+
+test('dark mode toggle', async ({ page }) => {
+  await page.goto(baseUrl)
+  const darkModeToggle = await page.getByTestId('color-mode-toggle')
+  await darkModeToggle.click()
+  expect(await page.getAttribute('html', 'class')).toBe('dark')
+  await darkModeToggle.click()
+  expect(await page.getAttribute('html', 'class')).toBe('light')
+})
