@@ -6,7 +6,7 @@ test('App has a button to start the game and directs to "player-name" route', as
 }) => {
   await page.goto(baseUrl)
   const button = page.getByTestId('start-game')
-  expect(button).toBeVisible()
+  await expect(button).toBeVisible()
   button.click()
   await page.waitForURL(playerNameUrl)
 })
