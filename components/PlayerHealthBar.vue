@@ -1,23 +1,23 @@
 <template>
   <div
-    class="animate__animated flex items-center justify-center"
+    class="animate__animated relative flex items-center justify-center"
     :class="[
       isCharging && 'animate__flash animate__infinite',
       isSmall ? 'h-10' : 'h-12',
       isFullWidth ? 'w-full' : 'w-96'
     ]"
   >
+    <span
+      v-if="route.path !== '/game/player-name'"
+      class="absolute z-50 font-retro text-xs md:hidden"
+    >
+      {{ playerName }}
+    </span>
     <div class="relative h-full w-full rounded bg-gray-800">
       <div
         class="absolute left-0 top-0 flex h-full items-center justify-center rounded bg-primary transition-all duration-1000"
         :style="{ width: playerHealth + '%' }"
-      >
-        <span
-          v-if="route.path !== '/game/player-name'"
-          class="font-retro text-xs md:hidden"
-          >{{ playerName }}</span
-        >
-      </div>
+      ></div>
     </div>
   </div>
 </template>

@@ -17,7 +17,7 @@
       <KVBtn
         is-retro
         is-uppercase
-        label="Try Again?"
+        label="Try Again"
         @click="resetGame('tryAgain')"
       />
       <KVBtn
