@@ -9,6 +9,7 @@ test('App has a button to start the game and directs to "player-name" route', as
   await expect(button).toBeVisible()
   button.click()
   await page.waitForURL(playerNameUrl)
+  expect(page.url()).toBe(playerNameUrl)
 })
 
 test('App has a form and button to submit the player name', async ({
