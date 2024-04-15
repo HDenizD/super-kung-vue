@@ -6,28 +6,28 @@
 
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
-  @apply h-2 w-2;
+  @apply md:h-2 md:w-2;
 }
 *::-webkit-scrollbar-track {
-  @apply bg-light dark:bg-dark;
+  @apply md:bg-light md:dark:bg-dark;
 }
 
 *::-webkit-scrollbar-track:hover {
-  @apply bg-dark;
+  @apply md:bg-dark;
 }
 
 *::-webkit-scrollbar-track:active {
-  @apply bg-dark;
+  @apply md:bg-dark;
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply rounded-md bg-primary;
+  @apply md:rounded-md md:bg-primary;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  @apply bg-secondary;
+  @apply md:bg-secondary;
 }
 
 *::-webkit-scrollbar-thumb:active {
-  @apply bg-accent;
+  @apply md:bg-accent;
 }
