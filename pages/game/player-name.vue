@@ -1,7 +1,7 @@
 <template>
   <div
     ref="playerNameForm"
-    class="absolute-center animate__slower"
+    class="absolute-center animate__slower w-full max-w-96 px-2 md:w-auto md:px-0"
   >
     <form
       @submit.prevent="startGame()"
