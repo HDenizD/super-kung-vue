@@ -7,7 +7,7 @@
         >
           <TheNavigation />
         </header>
-        <main class="flex-grow px-2 pb-20 md:px-4">
+        <main class="flex-grow px-2 pb-20 pt-8 md:px-4">
           <slot />
         </main>
         <footer
