@@ -7,13 +7,11 @@
         >
           <TheNavigation />
         </header>
-        <main class="relative my-8 flex-grow">
-          <div class="px-2 md:px-4">
-            <slot />
-          </div>
+        <main class="flex-grow px-2 pb-20 md:px-4">
+          <slot />
         </main>
         <footer
-          class="dark:border-tertiary sticky bottom-0 right-0 mt-2 flex h-auto w-full items-center justify-between overflow-hidden bg-light bg-opacity-95 p-2 shadow-lg dark:bg-dark dark:bg-opacity-95"
+          class="dark:border-tertiary fixed bottom-0 right-0 flex h-auto w-full items-center justify-between overflow-hidden bg-light bg-opacity-95 p-2 shadow-lg dark:bg-dark dark:bg-opacity-95"
         >
           <TheFooter />
           <PlayerHealthBar
