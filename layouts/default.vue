@@ -6,7 +6,7 @@
       >
         <TheNavigation />
       </header>
-      <main class="h-0 flex-grow overflow-y-auto px-2 py-10 md:px-4">
+      <main class="h-0 flex-grow overflow-y-auto px-2 py-9 md:px-4">
         <slot />
       </main>
       <footer
