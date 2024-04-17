@@ -22,6 +22,7 @@ export const useStageStore = defineStore(
   () => {
     const { playerHealth } = storeToRefs(usePlayerStore())
     const stages = ref<Stage[]>([])
+    const stagesTillWin = ref(10)
 
     const indexBasedStagesTitleAndId = computed(() => {
       return (stages.value = stages.value.map((stage, index) => {
@@ -89,7 +90,7 @@ export const useStageStore = defineStore(
           )
         })
         randomizeStages(stages.value)
-        reduceStages(stages.value, 1)
+        reduceStages(stages.value, stagesTillWin.value)
       }
     }
 
