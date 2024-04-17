@@ -8,10 +8,10 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: false },
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     'nuxt-icon',
     '@nuxtjs/google-fonts'
