@@ -57,7 +57,6 @@ watch(
   () => isChargeHealthComplete.value,
   () => {
     if (isChargeHealthComplete.value) {
-      console.log('Game started!')
       isChargeHealth.value = false
       setTimeout(() => {
         router.push('/game/stage-hub')

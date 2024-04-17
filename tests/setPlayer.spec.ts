@@ -10,7 +10,6 @@ test('App has a button to start the game and directs to "player-name" route', as
   button.click()
   await page.waitForURL(playerNameUrl)
   expect(page.url()).toBe(playerNameUrl)
-  console.log('test')
 })
 
 test('validates player name input if empty and prevents starting the game', async ({

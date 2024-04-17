@@ -34,6 +34,10 @@ export const useStageStore = defineStore(
       return stages.value.find((stage) => stage.id === stageId)
     })
 
+    const isAllQuestionsAreCorrect = computed(() => {
+      return stages.value.every((stage) => stage.hasCorrectAnswerSelected)
+    })
+
     function submitAnswer(stageId: string, selectedAnswer: Option) {
       const stage = getStageById.value(stageId)
       if (stage) {
@@ -85,11 +89,16 @@ export const useStageStore = defineStore(
           )
         })
         randomizeStages(stages.value)
+        reduceStages(stages.value, 1)
       }
     }
 
     function randomizeStages(stages: Stage[]) {
       stages.sort(() => Math.random() - 0.5)
+    }
+
+    function reduceStages(stages: Stage[], amount: number) {
+      stages.splice(amount)
     }
 
     function checkIfAllPreviousStageIsNotCompletedAndLockIt(
@@ -111,6 +120,7 @@ export const useStageStore = defineStore(
       stages,
       indexBasedStagesTitleAndId,
       getStageById,
+      isAllQuestionsAreCorrect,
       submitAnswer,
       initStages,
       checkIfAllPreviousStageIsNotCompletedAndLockIt,

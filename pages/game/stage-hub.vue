@@ -21,13 +21,23 @@
 
 <script setup lang="ts">
 import { useStageStore } from '~/store/stage'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const { checkIfAllPreviousStageIsNotCompletedAndLockIt } = useStageStore()
-const { indexBasedStagesTitleAndId } = storeToRefs(useStageStore())
+const { indexBasedStagesTitleAndId, isAllQuestionsAreCorrect } =
+  storeToRefs(useStageStore())
 
 const isClickableBecauseAllPreviousStagesAreCompleted = (stageId: string) => {
   return !checkIfAllPreviousStageIsNotCompletedAndLockIt(stageId)
 }
+
+watchEffect(() => {
+  if (isAllQuestionsAreCorrect.value) {
+    router.push('/game/win')
+  }
+})
 </script>
 
 <style scoped></style>
