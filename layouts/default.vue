@@ -1,7 +1,7 @@
 <template>
-  <div class="mx-auto max-w-7xl">
-    <ColorScheme tag="span">
-      <div class="relative flex min-h-full flex-col">
+  <ColorScheme tag="span">
+    <div class="mx-auto max-w-7xl">
+      <div class="relative flex min-h-screen flex-col">
         <header
           class="dark:border-tertiary sticky left-0 top-0 z-50 flex h-14 items-center bg-light bg-opacity-95 p-2 dark:bg-dark dark:bg-opacity-95"
         >
@@ -23,8 +23,8 @@
           />
         </footer>
       </div>
-    </ColorScheme>
-  </div>
+    </div>
+  </ColorScheme>
 </template>
 
 <script setup lang="ts">
