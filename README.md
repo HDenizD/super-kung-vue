@@ -99,6 +99,6 @@ License:
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contact
-If you have any questions, feel free to contact me on discord.
+If you have any questions, feel free to contact me on discord: `denizzer`.
 
 Enjoy playing Super Kung Vue!
