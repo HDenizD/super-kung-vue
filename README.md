@@ -1,5 +1,6 @@
 # Super Kung Vue - Quiz Game
-Super Kung Vue is a fun and interactive quiz game built with Vue 3 and Nuxt 3. Test your knowledge of Vue 3 with a variety AI-Generated questions.
+[Super Kung Vue](https://hdenizd.github.io/super-kung-vue/) is a fun and interactive quiz game built with Vue 3 and Nuxt 3. Test your knowledge of Vue 3 with a variety AI-Generated questions.
+
 
 <img src="./public/images/app-preview.gif" alt="app-preview-img" width="400"/>
 
