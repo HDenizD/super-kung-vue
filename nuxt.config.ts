@@ -4,7 +4,8 @@ export default defineNuxtConfig({
     head: {
       link: [{ rel: 'icon', type: 'image/png', href: 'icons/favicon.ico' }],
       title: 'Super Kung Vue - Quiz Game'
-    }
+    },
+    baseURL: process.env.NODE_ENV === 'production' ? '/super-kung-vue/' : '/'
   },
   devtools: { enabled: false },
   modules: [
