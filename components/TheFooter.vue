@@ -4,7 +4,7 @@
     icon="material-symbols:settings-rounded"
     @click="$router.push('/settings')"
   /> -->
-  <div class="font-retro text-xs opacity-50">v.1</div>
+  <div class="font-retro text-xs opacity-50">{{ packageJson.version }}</div>
   <KVBtn
     v-if="isGameInProgress"
     is-retro
@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+import packageJson from '@/package.json'
 import { usePlayerStore } from '~/store/player'
 
 const { resetGame } = usePlayerStore()
