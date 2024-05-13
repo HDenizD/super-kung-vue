@@ -42,10 +42,6 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  isFullWidth: {
-    type: Boolean,
-    default: false
-  }
 })
 
 const isCharging = ref(false)
