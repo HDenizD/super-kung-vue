@@ -1,10 +1,9 @@
 <template>
   <div
-    class="animate__animated relative flex items-center justify-center"
+    class="animate__animated relative flex items-center justify-center w-full"
     :class="[
       isCharging && 'animate__flash animate__infinite',
-      isSmall ? 'h-10' : 'h-12',
-      isFullWidth ? 'w-full' : 'w-96'
+      isSmall ? 'h-10' : 'h-12'
     ]"
   >
     <span
