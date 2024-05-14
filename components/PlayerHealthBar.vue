@@ -1,6 +1,6 @@
 <template>
   <div
-    class="animate__animated relative flex h-12 w-full items-center justify-center"
+    class="animate__animated relative flex h-12 md:w-96 w-full items-center justify-center"
     :class="[isCharging && 'animate__flash animate__infinite']"
   >
     <span
