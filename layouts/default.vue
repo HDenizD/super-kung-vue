@@ -17,8 +17,6 @@
           v-if="isGameInProgress"
           class="z-50 md:hidden"
           :player-health="playerHealth"
-          is-small
-          is-full-width
         />
       </footer>
     </div>

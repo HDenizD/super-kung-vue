@@ -1,11 +1,7 @@
 <template>
   <div
-    class="animate__animated relative flex items-center justify-center"
-    :class="[
-      isCharging && 'animate__flash animate__infinite',
-      isSmall ? 'h-10' : 'h-12',
-      isFullWidth ? 'w-full' : 'w-96'
-    ]"
+    class="animate__animated relative flex h-12 w-full items-center justify-center"
+    :class="[isCharging && 'animate__flash animate__infinite']"
   >
     <span
       v-if="route.path !== '/game/player-name'"
@@ -36,14 +32,6 @@ const props = defineProps({
     required: true
   },
   isChargeHealth: {
-    type: Boolean,
-    default: false
-  },
-  isSmall: {
-    type: Boolean,
-    default: false
-  },
-  isFullWidth: {
     type: Boolean,
     default: false
   }
