@@ -34,6 +34,7 @@ export const usePlayerStore = defineStore(
         playerHealth.value = 100
         isGameInProgress.value = true
         router.push('/game/stage-hub')
+        resetStages()
 
       }
       if (mode === 'exit') {
@@ -43,7 +44,7 @@ export const usePlayerStore = defineStore(
         localStorage.clear()
       }
 
-      resetStages()
+
     }
 
     function updatePlayerName(name: string) {
