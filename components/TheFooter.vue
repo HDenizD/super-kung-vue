@@ -10,7 +10,7 @@
     is-retro
     is-upper-case
     label="Reset Game"
-    @click="resetGame('exit')"
+    @click="resetGame('resetGame')"
   />
 </template>
 
