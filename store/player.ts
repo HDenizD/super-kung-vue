@@ -23,20 +23,28 @@ export const usePlayerStore = defineStore(
       }
     }
 
-    function resetGame(mode: 'tryAgain' | 'exit' = 'exit') {
+    function resetGame(mode: 'tryAgain' | 'exit' | 'resetGame' = 'resetGame') {
       const { resetStages } = useStageStore()
+      if (mode === 'resetGame') {
+        playerHealth.value = 0
+        router.push('/')
+      }
       if (mode === 'tryAgain') {
+        console.log('tryAgain')
         playerHealth.value = 100
         isGameInProgress.value = true
         router.push('/game/stage-hub')
+        resetStages()
+
       }
       if (mode === 'exit') {
         playerName.value = ''
         playerHealth.value = 0
         router.push('/')
+        localStorage.clear()
       }
-      localStorage.clear()
-      resetStages()
+
+
     }
 
     function updatePlayerName(name: string) {

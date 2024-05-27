@@ -10,7 +10,7 @@
         <slot />
       </main>
       <footer
-        class="dark:border-tertiary sticky bottom-0 left-0 z-50 flex h-16 w-full items-center justify-between overflow-hidden bg-light bg-opacity-95 p-4 shadow-lg dark:bg-dark dark:bg-opacity-95"
+        class="dark:border-tertiary sticky bottom-0 left-0 z-50 flex h-16 w-full items-center justify-between overflow-hidden bg-light bg-opacity-95 p-4 dark:bg-dark dark:bg-opacity-95"
       >
         <TheFooter />
         <PlayerHealthBar
