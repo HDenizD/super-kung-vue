@@ -18,10 +18,7 @@
         v-if="isGameInProgress"
         class="hidden md:block"
       >
-        <PlayerHealthBar
-          :player-health="playerHealth"
-          is-small
-        />
+        <PlayerHealthBar :player-health="playerHealth" />
       </li>
       <li
         v-if="isGameInProgress"
